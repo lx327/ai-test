@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <h1>WebSocket Example</h1>
+    <div id="messages"></div>
+    <input id="message" type="text" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script>
+        var stompClient = null;
+
+        function connect() {
+            var socket = new SockJS('/ws'); // 连接到 WebSocket 端点
+            stompClient = Stomp.over(socket);
+
+            stompClient.connect({}, function (frame) {
+                console.log('Connected: ' + frame);
+                // 订阅主题
+                stompClient.subscribe('/topic/messages', function (message) {
+                    showMessage(message.body);
+                });
+            });
+        }
+
+        function sendMessage() {
+            var message = document.getElementById('message').value;
+            stompClient.send("/app/send", {}, message); // 发送消息到 /app/send
+        }
+
+        function showMessage(message) {
+            var messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += "<div>" + message + "</div>"; // 显示接收到的消息
+        }
+
+        window.onload = connect; // 页面加载时连接 WebSocket
+    </script>
+</body>
+</html>
+//xuange

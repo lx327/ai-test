@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <h1>WebSocket Example</h1>
+    <div id="messages"></div>
+    <input id="message" type="text" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        var socket = new WebSocket('ws://localhost:8080/ws'); // 连接到 WebSocket 端点
+
+        socket.onopen = function() {
+            console.log('Connected to the server');
+        };
+
+        socket.onmessage = function(event) {
+            var messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += "<div>" + event.data + "</div>"; // 显示接收到的消息
+        };
+
+        function sendMessage() {
+            var message = document.getElementById('message').value;
+            socket.send(message); // 发送消息到服务器
+        }
+
+        socket.onclose = function() {
+            console.log('Connection closed');
+        };
+    </script>
+</body>
+</html>
+//xuange

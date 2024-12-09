@@ -1,0 +1,14 @@
+2024-10-21T10:55:38.740+08:00  INFO 14179 --- [ai] [main] com.xuange.ai.AiApplication              : Starting AiApplication using Java 21.0.1 with PID 14179 (/home/xuange/IdeaProjects/ai/target/classes started by xuange in /home/xuange/IdeaProjects/ai)
+2024-10-21T10:55:38.742+08:00  INFO 14179 --- [ai] [main] com.xuange.ai.AiApplication              : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T10:55:39.503+08:00  INFO 14179 --- [ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-21T10:55:39.505+08:00  INFO 14179 --- [ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-21T10:55:39.535+08:00  INFO 14179 --- [ai] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2024-10-21T10:55:40.218+08:00  INFO 14179 --- [ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9099 (http)
+2024-10-21T10:55:40.231+08:00  INFO 14179 --- [ai] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T10:55:40.231+08:00  INFO 14179 --- [ai] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-21T10:55:40.291+08:00  INFO 14179 --- [ai] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T10:55:40.292+08:00  INFO 14179 --- [ai] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1374 ms
+2024-10-21T10:55:40.673+08:00  INFO 14179 --- [ai] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: public static java.lang.String com.xuange.ai.aaa.common.QQEmaileAuth.qqEmaileAuth
+2024-10-21T10:55:41.791+08:00  INFO 14179 --- [ai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9099 (http) with context path '/'
+2024-10-21T10:55:41.799+08:00  INFO 14179 --- [ai] [main] com.xuange.ai.AiApplication              : Started AiApplication in 3.411 seconds (process running for 3.958)
+2024-10-21T10:55:41.850+08:00  WARN 14179 --- [ai] [main] io.netty.bootstrap.ServerBootstrap       : Unknown channel option 'SO_SNDBUF' for channel '[id: 0xdc699e85]'
